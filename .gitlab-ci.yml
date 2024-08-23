@@ -150,15 +150,6 @@ update-trigger-branch:
     - if: '$PIPELINE_TYPE == "CANONICAL_DEFAULT_BRANCH_PIPELINE"'
     - if: '$TRIGGER_UPDATE'  # Allow us to manually trigger this job in a pipeline if we wish using this CI variable
 
-dependency_update:
-  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder/distribution_ci_tools:${CI_TOOLS_VERSION}
-  stage: prepare
-  script:
-    - curl https://deps.app/install.sh | bash -s -- -b $HOME/bin
-    - $HOME/bin/deps ci
-  rules:
-    - if: '$PIPELINE_TYPE == "DEPS_IO_VERSION_CHECK_PIPELINE"'
-
 lint_package:
   stage: preflight
   when: always
