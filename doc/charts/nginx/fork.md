@@ -45,27 +45,27 @@ The following adjustments were made to the NGINX fork:
 - Add the template call `{{ include "ingress-nginx.automountServiceAccountToken" . }}` to `controller-serviceaccount.yaml`
 - Add the template to `_helpers.tpl`:
 
-   ```yaml
-   {{/*
-   Set if the default ServiceAccount token should be mounted by Kubernetes or not.
-   
-   Default is 'true'
-   */}}
-   {{- define "ingress-nginx.automountServiceAccountToken" -}}
-   automountServiceAccountToken: {{ pluck "automountServiceAccountToken" .Values.serviceAccount .Values.global.serviceAccount | first }}
-   {{- end -}}
-   ```
+  ```go
+  {{/*
+  Set if the default ServiceAccount token should be mounted by Kubernetes or not.
+
+  Default is 'true'
+  */}}
+  {{- define "ingress-nginx.automountServiceAccountToken" -}}
+  automountServiceAccountToken: {{ pluck "automountServiceAccountToken" .Values.serviceAccount .Values.global.serviceAccount | first }}
+  {{- end -}}
+  ```
 
 - Add the template call `{{ include "ingress-nginx.defaultBackend.automountServiceAccountToken" . }}` to `default-backend-serviceaccount.yaml`
 - Add the template to `_helpers.tpl`:
 
-   ```yaml
-   {{/*
-   Set if the default ServiceAccount token should be mounted by Kubernetes or not.
-   
-   Default is 'true'
-   */}}
-   {{- define "ingress-nginx.defaultBackend.automountServiceAccountToken" -}}
-   automountServiceAccountToken: {{ pluck "automountServiceAccountToken" .Values.defaultBackend.serviceAccount .Values.global.serviceAccount | first }}
-   {{- end -}}
-   ```
+  ```go
+  {{/*
+  Set if the default ServiceAccount token should be mounted by Kubernetes or not.
+
+  Default is 'true'
+  */}}
+  {{- define "ingress-nginx.defaultBackend.automountServiceAccountToken" -}}
+  automountServiceAccountToken: {{ pluck "automountServiceAccountToken" .Values.defaultBackend.serviceAccount .Values.global.serviceAccount | first }}
+  {{- end -}}
+  ```
