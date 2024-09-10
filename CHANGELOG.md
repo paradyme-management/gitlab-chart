@@ -121,6 +121,10 @@ No changes.
 
 - [Remove gke125 CI jobs](gitlab-org/charts/gitlab@57ced9243021af6de6e324f2ec5ad17b5dcf975e) ([merge request](gitlab-org/charts/gitlab!3760))
 
+## 8.0.7 (2024-09-10)
+
+No changes.
+
 ## 8.0.6 (2024-08-06)
 
 ### Changed (1 change)
