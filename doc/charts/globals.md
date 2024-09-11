@@ -1790,7 +1790,7 @@ global:
       stuck_ci_jobs_worker:
         cron: "0 * * * *"
       pipeline_schedule_worker:
-        cron: "19 * * * *"
+        cron: "3-59/10 * * * *"
       expire_build_artifacts_worker:
         cron: "*/7 * * * *"
 ```
