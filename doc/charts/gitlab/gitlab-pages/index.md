@@ -291,13 +291,8 @@ To have TLS access to the GitLab Pages feature you must:
 
 ### Pages domain without wildcard DNS
 
-DETAILS:
-**Status:** Beta
-
-> - [Introduced](https://gitlab.com/gitlab-org/charts/gitlab/-/issues/5570) as an [beta](https://docs.gitlab.com/ee/policy/experiment-beta-support.html) in GitLab 17.2.
-
-FLAG:
-On GitLab.com this feature is not available. This feature is not ready for production use.
+> - [Introduced](https://gitlab.com/gitlab-org/charts/gitlab/-/issues/5570) as a [beta](https://docs.gitlab.com/ee/policy/experiment-beta-support.html#beta) in GitLab 17.2.
+> - [Generally available](https://gitlab.com/gitlab-org/gitlab/-/issues/483365) in GitLab 17.4.
 
 WARNING:
 GitLab Pages supports only one URL scheme at a time: Either with wildcard DNS, or without wildcard DNS. If you enable `namespaceInPath`, existing GitLab Pages websites are accessible only on domains without wildcard DNS.
