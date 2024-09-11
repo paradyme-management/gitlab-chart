@@ -2,6 +2,10 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 8.3.2 (2024-09-11)
+
+No changes.
+
 ## 8.3.1 (2024-08-20)
 
 No changes.
@@ -26,6 +30,10 @@ No changes.
 - [Update Helm release gitlab-runner to v0.67.1](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/f44a22b79ca6c1193b342306dd5b2a295e03e09a) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3871))
 - [Update gitlab-org/charts/gitlab-runner from 0.66.0 to 0.67.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b467affed97511abb50aacc2dbfab479694624b5) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3849))
 - [Update gitlab-org/gitlab-qa from 14.12.0 to 14.13.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/8c71f92f9de6e01ffddc7d004987f18901104a26) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3848))
+
+## 8.2.5 (2024-09-11)
+
+No changes.
 
 ## 8.2.4 (2024-08-21)
 
@@ -61,6 +69,10 @@ No changes.
 - [Update gitlab-org/container-registry from 4.5.0-gitlab to 4.6.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/6732226e39aab24b8a478a4a841e2bd94355a4d4) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3826))
 - [Update cert-manager/cert-manager from 1.12.11 to 1.12.12](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/726af7eb0d223e28ba35b0287a3134ba267ddd01) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3817))
 - [Update gitlab-org/charts/gitlab-runner from 0.65.0 to 0.66.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/4b2f9346d27fa467ea97cc4f44794288e61325a8) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3810))
+
+## 8.1.7 (2024-09-11)
+
+No changes.
 
 ## 8.1.6 (2024-08-21)
 
