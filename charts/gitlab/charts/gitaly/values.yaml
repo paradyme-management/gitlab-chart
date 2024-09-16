@@ -25,6 +25,8 @@ image:
   # tag: master
 service:
   tls: {}
+  type: ClusterIP
+  clusterIP: None
 annotations: {}
 common:
   labels: {}
