@@ -215,6 +215,10 @@ No changes.
 - [Remove deprecated queue selector and negate options from Sidekiq chart](gitlab-org/charts/gitlab@6c3bf44290e29b230132bb17d244d38e218eb15b) ([merge request](gitlab-org/charts/gitlab!3697))
 - [Remove support for busybox init containers](gitlab-org/charts/gitlab@f85e7f94cc4863038461daece756081e9d1d960a) ([merge request](gitlab-org/charts/gitlab!3709))
 
+## 7.11.10 (2024-09-16)
+
+No changes.
+
 ## 7.11.9 (2024-09-10)
 
 No changes.
