@@ -95,6 +95,7 @@ gitlab:
 | `backups.cron.startingDeadlineSeconds`      | Backup cron job starting deadline, in seconds (if null, no starting deadline is applied) | `null`                      |
 | `backups.cron.successfulJobsHistoryLimit`   | Number of successful backup jobs list in history | `3`                      |
 | `backups.cron.suspend`                      | Backup cron job is suspended | `false`                      |
+| `backups.cron.timeZone`                     | Time zone for the backup schedule. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#time-zones). Uses the cluster time zone if not specified. | ""                      |
 | `backups.cron.tolerations`                  | Tolerations to add to the backup cron job    | ""                           |
 | `backups.cron.nodeSelector`                 | Backup cron job node selection               | ""                           |
 | `backups.objectStorage.backend`             | Object storage provider to use (`s3`, `gcs` or `azure`) | `s3`                       |
