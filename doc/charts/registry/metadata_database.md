@@ -213,8 +213,8 @@ To migrate existing container registry to the metadata database in one step:
        readonly:
          enabled: true  # must remain set to true while the migration is executed
      database:
-       configure: true
-       enabled: false
+       configure: true  # must be true for the migration step
+       enabled: false  # must be false!
        name: registry  # must match the database name you created above
        user: registry  # must match the database username you created above
        password:
@@ -259,6 +259,7 @@ To migrate existing container registry to the metadata database in one step:
        readonly:
          enabled: false
      database:
+       configure: true  # once database.enabled is set to true, this option can be removed
        enabled: true
        name: registry
        user: registry
@@ -421,7 +422,7 @@ Allow enough time for downtime during this process.
        readonly:
          enabled: false
      database:
-       configure: true
+       configure: true  # once database.enabled is set to true, this option can be removed
        enabled: true   # must be true!
        name: registry  # must match the database name you created above
        user: registry  # must match the database username you created above
