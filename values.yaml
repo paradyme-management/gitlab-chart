@@ -247,6 +247,8 @@ global:
     usernameChangingEnabled: true
     issueClosingPattern:
     defaultTheme:
+    defaultColorMode: 
+    defaultSyntaxHighlightingTheme: 
     defaultProjectsFeatures:
       issues: true
       mergeRequests: true
