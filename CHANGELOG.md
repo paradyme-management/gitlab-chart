@@ -880,6 +880,10 @@ No changes.
 
 - [Remove registry migration configuration](gitlab-org/charts/gitlab@7593db8956336c56f038542e6e89d5c8690f03de) ([merge request](gitlab-org/charts/gitlab!3280))
 
+## 7.1.8 (2024-09-23)
+
+No changes.
+
 ## 7.1.7 (2024-07-23)
 
 No changes.
