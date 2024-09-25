@@ -2,6 +2,10 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 8.4.1 (2024-09-24)
+
+No changes.
+
 ## 8.4.0 (2024-09-18)
 
 ### Added (2 changes)
@@ -19,6 +23,10 @@ entry.
 - [Update Helm release gitlab-runner to v0.68.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/3408142be8a458faccfe61ff5299fbe9e37076ec) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3880))
 - [Update Helm release cert-manager to v1.12.13](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/e45d38f61348f8fae9c824a58a9e3551b91a7d5b) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3876))
 - [Update dependency container-registry to v4.7.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/9da185ee884ef15ce5be7f032d734bfa654ef630) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3872))
+
+## 8.3.4 (2024-09-24)
+
+No changes.
 
 ## 8.3.3 (2024-09-16)
 
@@ -52,6 +60,10 @@ No changes.
 - [Update Helm release gitlab-runner to v0.67.1](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/f44a22b79ca6c1193b342306dd5b2a295e03e09a) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3871))
 - [Update gitlab-org/charts/gitlab-runner from 0.66.0 to 0.67.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b467affed97511abb50aacc2dbfab479694624b5) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3849))
 - [Update gitlab-org/gitlab-qa from 14.12.0 to 14.13.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/8c71f92f9de6e01ffddc7d004987f18901104a26) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3848))
+
+## 8.2.8 (2024-09-25)
+
+No changes.
 
 ## 8.2.7 (2024-09-16)
 
