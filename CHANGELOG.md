@@ -61,6 +61,10 @@ No changes.
 - [Update gitlab-org/charts/gitlab-runner from 0.66.0 to 0.67.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b467affed97511abb50aacc2dbfab479694624b5) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3849))
 - [Update gitlab-org/gitlab-qa from 14.12.0 to 14.13.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/8c71f92f9de6e01ffddc7d004987f18901104a26) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3848))
 
+## 8.2.8 (2024-09-25)
+
+No changes.
+
 ## 8.2.7 (2024-09-16)
 
 No changes.
