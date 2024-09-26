@@ -69,3 +69,8 @@ The following adjustments were made to the NGINX fork:
   automountServiceAccountToken: {{ pluck "automountServiceAccountToken" .Values.defaultBackend.serviceAccount .Values.global.serviceAccount | first }}
   {{- end -}}
   ```
+
+- Add the following attributes to comply with Pod Security Standards Profile Restricted:
+  - `controller-deployment.yaml`
+    - `spec.template.spec.containers[0].securityContext.runAsNonRoot`
+    - `spec.template.spec.containers[0].securityContext.seccompProfile`

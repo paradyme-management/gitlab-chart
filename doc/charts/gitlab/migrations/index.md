@@ -44,6 +44,9 @@ Table below contains all the possible charts configurations that can be supplied
 | `init.image.repository`     | initContainer image repository           | `registry.gitlab.com/gitlab-org/build/cng/gitlab-base` |
 | `init.image.tag`            | initContainer image tag                  | `master`          |
 | `init.image.containerSecurityContext` | init container securityContext overrides | `{}`    |
+| `init.containerSecurityContext.allowPrivilegeEscalation` | initContainer specific: Controls whether a process can gain more privileges than its parent process                                                                             | `false`                                                                               | 
+| `init.containerSecurityContext.runAsNonRoot`             | initContainer specific: Controls whether the container runs with a non-root user                                                                                                | `true`                                                                                |
+| `init.containerSecurityContext.capabilities.drop`        | initContainer specific: Removes [Linux capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html) for the container                                               | `[ "ALL" ]`                                                                           |
 | `enabled`                   | Migrations enable flag                   | `true`            |
 | `tolerations`               | Toleration labels for pod assignment     | `[]`              |
 | `affinity`                  | [Affinity rules](../index.md#affinity) for pod assignment            | `{}`              |
@@ -60,7 +63,11 @@ Table below contains all the possible charts configurations that can be supplied
 | `securityContext.fsGroup`   | Group ID under which the pod should be started | `1000`                                   |
 | `securityContext.runAsUser` | User ID under which the pod should be started  | `1000`                                   |
 | `securityContext.fsGroupChangePolicy` | Policy for changing ownership and permission of the volume (requires Kubernetes 1.23) |    |
+| `securityContext.seccompProfile.type`                    | Seccomp profile to use                                                                                                                                                          | `RuntimeDefault`                                                                      |
 | `containerSecurityContext.runAsUser`  | Override container [securityContext](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.25/#securitycontext-v1-core) under which the container is started | `1000` |
+| `containerSecurityContext.allowPrivilegeEscalation`      | Controls whether a process of the container can gain more privileges than its parent process                                                                                    | `false`                                                                               |
+| `containerSecurityContext.runAsNonRoot`                  | Controls whether the container runs with a non-root user                                                                                                                        | `true`                                                                                |
+| `containerSecurityContext.capabilities.drop`             | Removes [Linux capabilities](https://man7.org/linux/man-pages/man7/capabilities.7.html) for the Gitaly container                                                                | `[ "ALL" ]`                                                                           |
 | `serviceAccount.annotations` | ServiceAccount annotations              | `{}`                                                    |
 | `serviceAccount.automountServiceAccountToken`| Indicates whether or not the default ServiceAccount access token should be mounted in pods | `false`    |
 | `serviceAccount.create`     | Indicates whether or not a ServiceAccount should be created                                      | `false`           |
