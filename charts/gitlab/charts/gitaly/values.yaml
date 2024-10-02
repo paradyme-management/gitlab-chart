@@ -66,6 +66,7 @@ cgroups:
     # memoryBytes:
     # cpuShares:
     # cpuQuotaUs:
+    # maxCgroupsPerRepo:
 
 ## Support for tolerations for pod scheduling
 tolerations: []
