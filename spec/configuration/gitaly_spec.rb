@@ -549,6 +549,7 @@ describe 'Gitaly configuration' do
                 memoryBytes: 32212254720
                 cpuShares: 512
                 cpuQuotaUs: 200000
+                maxCgroupsPerRepo: 2
       )).deep_merge(default_values)
     end
 
@@ -578,6 +579,7 @@ describe 'Gitaly configuration' do
           memory_bytes = 32212254720
           cpu_shares = 512
           cpu_quota_us = 200000
+          max_cgroups_per_repo = 2
           CONFIG
         )
       end
