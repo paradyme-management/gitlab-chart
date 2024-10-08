@@ -240,3 +240,15 @@ This section controls if a ServiceAccount should be created and if the default a
 ### affinity
 
 For more information, see [`affinity`](../index.md#affinity).
+
+## Enable debug logging
+
+To enable debug logging for the KAS sub-chart, add the following to the `kas` section of your `values.yaml` file:
+
+```yaml
+customConfig:
+   observability:
+      logging:
+         level: debug
+         grpc_level: debug
+```
