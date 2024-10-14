@@ -406,6 +406,8 @@ database:
     backoffLimit: 6
     # Annotations for the job
     annotations: {}
+  backgroundMigrations:
+    enabled: false
 
 redis:
   # Redis cache to be used in conjunction with the metadata database.
