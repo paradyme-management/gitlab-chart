@@ -241,6 +241,11 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `database.pool.maxopen`                                  | `0`                                                                  | The maximum number of open connections to the database. If `maxopen` is less than `maxidle`, then `maxidle` is reduced to match the `maxopen` limit. Zero or not specified means unlimited open connections.                                                                                                                                       |
 | `database.pool.maxlifetime`                              | `0`                                                                  | The maximum amount of time a connection may be reused. Expired connections may be closed lazily before reuse. Zero or not specified means unlimited reuse.                                                                                                                                                                                         |
 | `database.pool.maxidletime`                              | `0`                                                                  | The maximum amount of time a connection may be idle. Expired connections may be closed lazily before reuse. Zero or not specified means unlimited duration.                                                                                                                                                                                        |
+| `database.loadBalancing.enabled`                         | `false`                                                              | Enable database load balancing. This is an experimental feature and must not be used in production environments.                                                                                                                                                                                        |
+| `database.loadBalancing.nameserver.host`                      | `localhost`                                                          | The host of the nameserver to use for looking up the DNS record.        |
+| `database.loadBalancing.nameserver.port`                            | `8600`                                                               | The port of the nameserver to use for looking up the DNS record.                                           |
+| `database.loadBalancing.record`                          |                                                                      | The SRV record to look up. This option is required for service discovery to work.      |
+| `database.loadBalancing.replicaCheckInterval`            | `1m`                                                                 | The minimum amount of time between checking the status of a replica.      |
 | `database.migrations.enabled`                            | `true`                                                               | Enable the migrations job to automatically run migrations upon initial deployment and upgrades of the Chart. Note that migrations can also be run manually from within any running Registry pods.                                                                                                                                                  |
 | `database.migrations.activeDeadlineSeconds`              | `3600`                                                               | Set the [activeDeadlineSeconds](https://kubernetes.io/docs/concepts/workloads/controllers/job/#job-termination-and-cleanup) on the migrations job.                                                                                                                                                                                                 |
 | `database.migrations.annotations`                        | `{}`                                                                 | Additional annotations to add to the migrations job.                                                                                                                                                                                                                                                                                               |
@@ -993,7 +998,7 @@ See the [administration documentation](https://docs.gitlab.com/ee/administration
 before enabling this feature.
 
 NOTE:
-This feature requires PostgreSQL 12 or newer.
+This feature requires PostgreSQL 13 or newer.
 
 ```yaml
 database:
@@ -1029,6 +1034,13 @@ database:
     maxJobRetries: 3
     jobInterval: 10s
 ```
+
+#### Load balancing
+
+WARNING:
+This is an experimental feature under active development and must not be used in production.
+
+The `loadBalancing` section allows configuring [database load balancing](https://gitlab.com/gitlab-org/container-registry/-/blob/master/docs/configuration.md#loadbalancing). The [Redis cache](#redis-cache) must be enabled for this feature to work.
 
 #### Manage the database
 

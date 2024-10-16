@@ -400,6 +400,11 @@ database:
   name: registry
   sslmode: disable
   ssl: {}
+  # Load balancing settings
+  # WARNING: This is an experimental feature and must not be used in production.
+  # https://gitlab.com/gitlab-org/container-registry/-/blob/master/docs/configuration.md#loadbalancing
+  loadBalancing:
+    enabled: false
   migrations:
     enabled: true
     activeDeadlineSeconds: 3600
