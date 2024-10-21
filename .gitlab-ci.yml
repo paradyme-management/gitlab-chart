@@ -88,6 +88,12 @@ include:
   - local: '/.gitlab/ci/rules.gitlab-ci.yml'
   - local: '/.gitlab/ci/review-apps.gitlab-ci.yml'
   - local: '/.gitlab/ci/operator.gitlab-ci.yml'
+  - local: '/.gitlab/ci/environments/gke129-arm.gitlab-ci.yml'
+    rules:
+      # CANONICAL_DEFAULT_BRANCH_PIPELINE
+      - if: '$PIPELINE_TYPE == null && $CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      # CANONICAL_MR_PIPELINE
+      - if: '$PIPELINE_TYPE == null && $CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_PIPELINE_SOURCE == "merge_request_event"'
   - template: Jobs/Dependency-Scanning.latest.gitlab-ci.yml
   - template: Jobs/Secret-Detection.latest.gitlab-ci.yml
   - template: Jobs/SAST.latest.gitlab-ci.yml
