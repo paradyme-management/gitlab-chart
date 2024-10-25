@@ -199,15 +199,30 @@ module Gitlab
     end
 
     def update_application_settings
-      opts = runner_token_settings
-      opts << fips_settings if fips_mode?
-      settings = opts.join(" ") \
-
       cmd = full_command(
         <<~RAILS_RUNNER
         gitlab-rails runner "
         settings = ApplicationSetting.current_without_cache;
-        #{settings}
+
+        # Reset runner token
+        settings.update_columns(
+          encrypted_customers_dot_jwt_signing_key_iv: nil,
+          encrypted_customers_dot_jwt_signing_key: nil,
+          encrypted_ci_jwt_signing_key_iv: nil,
+          encrypted_ci_jwt_signing_key: nil,
+          error_tracking_access_token_encrypted: nil);
+        settings.set_runners_registration_token('#{runner_registration_token}');
+
+        # Set FIPS restrictions
+        if File.file?('/etc/system-fips')
+          settings.rsa_key_restriction=3072;
+          settings.dsa_key_restriction=-1;
+          settings.ecdsa_key_restriction=256;
+          settings.ed25519_key_restriction=256;
+          settings.ecdsa_sk_key_restriction=256;
+          settings.ed25519_sk_key_restriction=256;
+        end
+
         settings.save!;
         Ci::Runner.delete_all;
         "
@@ -216,36 +231,6 @@ module Gitlab
 
       stdout, status = Open3.capture2e(cmd)
       return [stdout, status]
-    end
-
-    def fips_mode?
-      cmd = full_command("bash -c \"if [ -f /etc/system-fips ]; then echo 'Toolbox is in FIPS mode'; fi\"")
-      stdout, status = Open3.capture2e(cmd)
-
-      raise stdout unless status.success?
-
-      fips = stdout.include? "FIPS mode"
-
-      puts "Detected a FIPS instance." if fips
-      fips
-    end
-
-    def runner_token_settings
-      [
-        "settings.update_columns(encrypted_customers_dot_jwt_signing_key_iv: nil, encrypted_customers_dot_jwt_signing_key: nil, encrypted_ci_jwt_signing_key_iv: nil, encrypted_ci_jwt_signing_key: nil, error_tracking_access_token_encrypted: nil);",
-        "settings.set_runners_registration_token('#{runner_registration_token}');"
-      ]
-    end
-
-    def fips_settings
-      %w[
-        settings.rsa_key_restriction=3072;
-        settings.dsa_key_restriction=-1;
-        settings.ecdsa_key_restriction=256;
-        settings.ed25519_key_restriction=256;
-        settings.ecdsa_sk_key_restriction=256;
-        settings.ed25519_sk_key_restriction=256;
-      ]
     end
 
     # Enable legacy runner registration.
