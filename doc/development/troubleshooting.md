@@ -52,10 +52,13 @@ Certain jobs in CI use a backup of GitLab during testing. Complete the steps bel
 
 1. Install the most latest version of the chart that is compatible with the current backup
    into a development cluster.
-1. Restore the backup currently used in CI. The backup is available at
-   `https://storage.cloud.google.com/gitlab-charts-ci/test-backups/<BACKUP_PREFIX>_gitlab_backup.tar`.
+1. [Restore the backup](https://docs.gitlab.com/charts/backup-restore/restore.html#restoring-the-backup-file) currently
+   used in CI. The backup is available at `https://storage.cloud.google.com/gitlab-charts-ci/test-backups/<BACKUP_PREFIX>_gitlab_backup.tar`.
    The current `BACKUP_PREFIX` is defined in `.gitlab-ci.yml`.
-1. Edit the `gitlab-runner` Deployment replicas to 0, so the Runner turns off.
+1. Edit the `gitlab-runner` Deployment replicas to 0, so the Runner turns off:
+   ```bash
+   kubectl scale --replicas=0 deployment/gitlab-gitlab-runner
+   ```
 1. Log in to the UI and delete the Runner from the admin section. This should help
    avoid cipher errors later.
 1. [Ensure the background migrations all complete](https://docs.gitlab.com/ee/update/#check-for-background-migrations-before-upgrading), forcing them to complete if needed.
