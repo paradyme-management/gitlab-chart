@@ -56,9 +56,11 @@ Certain jobs in CI use a backup of GitLab during testing. Complete the steps bel
    used in CI. The backup is available at `https://storage.cloud.google.com/gitlab-charts-ci/test-backups/<BACKUP_PREFIX>_gitlab_backup.tar`.
    The current `BACKUP_PREFIX` is defined in `.gitlab-ci.yml`.
 1. Edit the `gitlab-runner` Deployment replicas to 0, so the Runner turns off:
-   ```bash
+
+   ```shell
    kubectl scale --replicas=0 deployment/gitlab-gitlab-runner
    ```
+
 1. Log in to the UI and delete the Runner from the admin section. This should help
    avoid cipher errors later.
 1. [Ensure the background migrations all complete](https://docs.gitlab.com/ee/update/#check-for-background-migrations-before-upgrading), forcing them to complete if needed.
