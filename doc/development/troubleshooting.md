@@ -56,7 +56,7 @@ Certain jobs in CI use a backup of GitLab during testing. Complete the steps bel
    used in CI. The backup is available at `https://storage.cloud.google.com/gitlab-charts-ci/test-backups/<BACKUP_PREFIX>_gitlab_backup.tar`.
    The current `BACKUP_PREFIX` is defined in `.gitlab-ci.yml`.
 
-   * If you are using the bundled MinIO with a self-signed certificate you may want
+   - If you are using the bundled MinIO with a self-signed certificate you may want
      to use `awscli` instead of `s3cmd` to avoid SSL errors.
      To do this, [first configure `awscli`](https://min.io/docs/minio/linux/integrations/aws-cli-with-minio.html)
      inside your toolbox, and then pass `--s3tool awscli --aws-s3-endpoint-url http://gitlab-minio-svc:9000` to
