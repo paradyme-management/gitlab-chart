@@ -52,9 +52,16 @@ Certain jobs in CI use a backup of GitLab during testing. Complete the steps bel
 
 1. Install the most latest version of the chart that is compatible with the current backup
    into a development cluster.
-1. [Restore the backup](https://docs.gitlab.com/charts/backup-restore/restore.html#restoring-the-backup-file) currently
+1. [Restore the backup](../backup-restore/restore.md#restoring-the-backup-file) currently
    used in CI. The backup is available at `https://storage.cloud.google.com/gitlab-charts-ci/test-backups/<BACKUP_PREFIX>_gitlab_backup.tar`.
    The current `BACKUP_PREFIX` is defined in `.gitlab-ci.yml`.
+
+   * If you are using the bundled MinIO with a self-signed certificate you may want
+     to use `awscli` instead of `s3cmd` to avoid SSL errors.
+     To do this, [first configure `awscli`](https://min.io/docs/minio/linux/integrations/aws-cli-with-minio.html)
+     inside your toolbox, and then pass `--s3tool awscli --aws-s3-endpoint-url http://gitlab-minio-svc:9000` to
+     your backup and restore commands.
+
 1. Edit the `gitlab-runner` Deployment replicas to 0, so the Runner turns off:
 
    ```shell
