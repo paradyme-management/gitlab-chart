@@ -62,14 +62,6 @@ Certain jobs in CI use a backup of GitLab during testing. Complete the steps bel
      inside your toolbox, and then pass `--s3tool awscli --aws-s3-endpoint-url http://gitlab-minio-svc:9000` to
      your backup and restore commands.
 
-1. Edit the `gitlab-runner` Deployment replicas to 0, so the Runner turns off:
-
-   ```shell
-   kubectl scale --replicas=0 deployment/gitlab-gitlab-runner
-   ```
-
-1. Log in to the UI and delete the Runner from the admin section. This should help
-   avoid cipher errors later.
 1. [Ensure the background migrations all complete](https://docs.gitlab.com/ee/update/#check-for-background-migrations-before-upgrading), forcing them to complete if needed.
 1. Upgrade the Helm release to use the new CNG images which have the new backup/restore
    changes by setting `global.gitlabVersion=<CNG tag>`.
