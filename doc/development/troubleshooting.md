@@ -65,7 +65,7 @@ Certain jobs in CI use a backup of GitLab during testing. Complete the steps bel
 1. [Ensure the background migrations all complete](https://docs.gitlab.com/ee/update/#check-for-background-migrations-before-upgrading), forcing them to complete if needed.
 1. Upgrade the Helm release to use the new CNG images which have the new backup/restore
    changes by setting `global.gitlabVersion=<CNG tag>`.
-1. [Create a new backup](../backup-restore/backup.md) from the new `toolbox` Pod.
+1. [Create a new backup](../backup-restore/backup.md) from the `toolbox` Pod.
 1. Download the new backup from the `gitlab-backups` bucket.
 1. Ask in `#g_distribution` to upload the backup to Google Cloud Storage (GCS):
    1. Project: `cloud-native-182609`, path: `gitlab-charts-ci/test-backups/`
