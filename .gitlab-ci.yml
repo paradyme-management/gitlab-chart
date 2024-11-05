@@ -88,7 +88,7 @@ include:
   - local: '/.gitlab/ci/rules.gitlab-ci.yml'
   - local: '/.gitlab/ci/review-apps.gitlab-ci.yml'
   - local: '/.gitlab/ci/operator.gitlab-ci.yml'
-  - local: '/.gitlab/ci/environments/gke129-arm.gitlab-ci.yml'
+  - local: '/.gitlab/ci/environments/gke130-arm.gitlab-ci.yml'
     rules:
       # CANONICAL_DEFAULT_BRANCH_PIPELINE
       - if: '$PIPELINE_TYPE == null && $CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
@@ -96,6 +96,7 @@ include:
       - if: '$PIPELINE_TYPE == null && $CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_PIPELINE_SOURCE == "merge_request_event"'
   - local: '/.gitlab/ci/environments/gke127.gitlab-ci.yml'
   - local: '/.gitlab/ci/environments/gke129.gitlab-ci.yml'
+  - local: '/.gitlab/ci/environments/gke130.gitlab-ci.yml'
   - local: '/.gitlab/ci/environments/eks.gitlab-ci.yml'
   - template: Jobs/Dependency-Scanning.latest.gitlab-ci.yml
   - template: Jobs/Secret-Detection.latest.gitlab-ci.yml
@@ -245,6 +246,12 @@ lint_package:
   extends: .kubeconform
   variables:
     KUBE_VERSION: "1.30.1"
+    HELM_SETTINGS: !reference ["Validate 1.27.5", variables, HELM_SETTINGS]
+
+"Validate 1.31.1":
+  extends: .kubeconform
+  variables:
+    KUBE_VERSION: "1.31.1"
     HELM_SETTINGS: !reference ["Validate 1.27.5", variables, HELM_SETTINGS]
 
 approve_cluster_tests:
