@@ -73,6 +73,10 @@ No changes.
 - [Update Helm release cert-manager to v1.12.13](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/e45d38f61348f8fae9c824a58a9e3551b91a7d5b) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3876))
 - [Update dependency container-registry to v4.7.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/9da185ee884ef15ce5be7f032d734bfa654ef630) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3872))
 
+## 8.3.7 (2024-11-12)
+
+No changes.
+
 ## 8.3.6 (2024-10-22)
 
 No changes.
