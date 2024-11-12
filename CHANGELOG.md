@@ -39,6 +39,10 @@ No changes.
 
 - [Remove 'ci_jwt_signing_key' secret migrated to ApplicationSetting](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b23acb2484f63ebb7e0f461033f5a3542519b3c9) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3910))
 
+## 8.4.4 (2024-11-12)
+
+No changes.
+
 ## 8.4.3 (2024-10-22)
 
 No changes.
