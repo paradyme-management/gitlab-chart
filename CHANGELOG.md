@@ -2,6 +2,12 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 8.5.2 (2024-11-12)
+
+### Changed (1 change)
+
+- [Update Helm release gitlab-runner to v0.70.1](https://gitlab.com/gitlab-org/security/charts/gitlab/-/commit/c25959ffaa4e8377938c22c19e651549e6f07839)
+
 ## 8.5.1 (2024-10-22)
 
 No changes.
@@ -33,6 +39,10 @@ No changes.
 
 - [Remove 'ci_jwt_signing_key' secret migrated to ApplicationSetting](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/b23acb2484f63ebb7e0f461033f5a3542519b3c9) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3910))
 
+## 8.4.4 (2024-11-12)
+
+No changes.
+
 ## 8.4.3 (2024-10-22)
 
 No changes.
@@ -62,6 +72,10 @@ No changes.
 - [Update Helm release gitlab-runner to v0.68.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/3408142be8a458faccfe61ff5299fbe9e37076ec) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3880))
 - [Update Helm release cert-manager to v1.12.13](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/e45d38f61348f8fae9c824a58a9e3551b91a7d5b) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3876))
 - [Update dependency container-registry to v4.7.0-gitlab](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/9da185ee884ef15ce5be7f032d734bfa654ef630) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3872))
+
+## 8.3.7 (2024-11-12)
+
+No changes.
 
 ## 8.3.6 (2024-10-22)
 
