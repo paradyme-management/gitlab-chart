@@ -90,10 +90,16 @@ include:
   - local: '/.gitlab/ci/operator.gitlab-ci.yml'
   - local: '/.gitlab/ci/environments/gke130-arm.gitlab-ci.yml'
     rules:
+      # pipeline-defined variables are not available, so we're hardwiring present value of:
+      #  * $CANONICAL_PROJECT_PATH
+      #
       # CANONICAL_DEFAULT_BRANCH_PIPELINE
       - if: '$PIPELINE_TYPE == null && $CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       # CANONICAL_MR_PIPELINE
       - if: '$PIPELINE_TYPE == null && $CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_PIPELINE_SOURCE == "merge_request_event"'
+      # CANONICAL_FEATURE_BRANCH_PIPELINE
+      #  Allow in triggered pipelines
+      - if: '$CI_PROJECT_PATH == "gitlab-org/charts/gitlab" && $CI_PIPELINE_SOURCE == "pipeline" && $TEST_BRANCH == "true"'
   - local: '/.gitlab/ci/environments/gke129.gitlab-ci.yml'
   - local: '/.gitlab/ci/environments/gke130.gitlab-ci.yml'
   - local: '/.gitlab/ci/environments/eks.gitlab-ci.yml'
