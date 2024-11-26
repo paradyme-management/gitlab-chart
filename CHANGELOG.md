@@ -27,6 +27,12 @@ No changes.
 - [Update Helm release gitlab-runner to v0.70.0](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/ea3833fd35e5d201c96e9da5b4892b610df19781) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3955))
 - [Bump nginx-controller from 1.3.1 to 1.11.2](https://gitlab.com/gitlab-org/charts/gitlab/-/commit/c8f6090ec807dde86d4f6fd92803ada8b125868e) ([merge request](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/3901))
 
+## 8.5.3 (2024-11-26)
+
+### Changed (1 change)
+
+- [Update Helm release gitlab-runner to v0.70.3](https://gitlab.com/gitlab-org/security/charts/gitlab/-/commit/657e3f8162b87547af92a5f23daca717491c071c)
+
 ## 8.5.2 (2024-11-12)
 
 ### Changed (1 change)
