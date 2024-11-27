@@ -142,6 +142,7 @@ registry:
     secretName:
     verify: true
     caSecretName:
+    cipherSuites:
 ```
 
 If you chose to deploy this chart as a standalone, remove the `registry` at the top level.
@@ -460,6 +461,7 @@ This section controls the registry Ingress.
 | `enabled`              | Boolean | `false` | Setting that controls whether to create Ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used.                                                                                    |
 | `tls.enabled`          | Boolean | `true`  | When set to `false`, you disable TLS for the Registry subchart. This is mainly useful for cases in which you cannot use TLS termination at `ingress-level`, like when you have a TLS-terminating proxy before the Ingress Controller. |
 | `tls.secretName`       | String  |         | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the registry URL. When not set, the `global.ingress.tls.secretName` is used instead. Defaults to not being set.                                   |
+| `tls.cipherSuites`     |  Array  | `[]`    | The list of cipher suites that Container registry should present to the client during TLS handshake.                        |
 
 ## Configuring TLS
 
@@ -504,6 +506,13 @@ registry:
     verify: true
     caSecretName: registry-tls-ca
 ```
+
+### Container Registry cipher suites
+
+Normally `tls.cipherSuites` option should be used only in some very unusual configurations where registry is deployed in a standalone mode and/or some non-default Ingress is used that does not support modern cipher suites.
+In a standard GitLab deployment, the NGINX Ingress will choose the highest supported TLS version by the container-registry backend, which is TLS1.3 at the moment.
+TLS1.3 does not allow for configuring ciphers and is secure by default.
+In case when for some reason TLS1.3 is unavailable, the default TLS1.2 ciphers list that Container Registry is using is also compatible with NGINX Ingress default settings and is secure as well.
 
 ### Configuring TLS for the debug port
 
